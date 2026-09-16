@@ -1,0 +1,404 @@
+/* --- Global Reset & CSS Variables --- */
+/*
+Theme Name:   Fulcrum Custom Theme
+Description:  Custom high-performance design for Fulcrum Matatu & Parcel Services
+Author:       Your Name
+Version:      1.0.0
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --navy-blue: #0F2942;
+    --bright-red: #DC2626;
+    --clean-white: #FFFFFF;
+    --light-gray: #F8FAFC;
+    --dark-charcoal: #1E293B;
+    --border-gray: #E2E8F0;
+}
+
+/* --- Exact Scaling & Filter Rules --- */
+.brand-logo {
+    height: 50px;             /* Keeps the perfect height boundary you have right now */
+    width: auto;              /* Prevents horizontal distortion or squishing */
+    max-width: 180px;         /* Limits width size */
+    object-fit: contain;      
+    display: block;
+    
+    /* ✨ THE FIXED LOGO VISIBILITY FORMULA: */
+    mix-blend-mode: normal;   
+    filter: invert(1) brightness(2) contrast(1.5); 
+}
+
+body {
+    background-color: var(--clean-white);
+    color: var(--dark-charcoal);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.section-subtext {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: #64748B;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--navy-blue);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--bright-red);
+    color: var(--clean-white);
+}
+
+.btn-primary:hover {
+    background-color: #B91C1C;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--clean-white);
+    border: 2px solid var(--clean-white);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    padding: 15px;
+}
+
+/* --- Header / Navigation Menu --- */
+.main-header {
+    background-color: var(--navy-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.main-header .logo {
+    color: var(--clean-white);
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    color: #94A3B8;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--clean-white);
+}
+
+/* --- Home / Hero Section --- */
+.hero-section {
+    background: linear-gradient(rgba(15, 41, 66, 0.85), rgba(15, 41, 66, 0.95)), url('https://unsplash.com') no-repeat center center/cover;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--clean-white);
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    max-width: 900px;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #E2E8F0;
+}
+
+.hero-buttons .btn {
+    margin: 0 10px;
+}
+
+/* --- Company Intro --- */
+.intro-section {
+    text-align: center;
+    max-width: 900px;
+}
+
+.intro-section p {
+    font-size: 1.15rem;
+    color: #475569;
+}
+
+/* --- Safety First Highlights --- */
+.safety-section {
+    background-color: var(--light-gray);
+    padding: 60px 0;
+}
+
+.safety-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.safety-card {
+    background-color: var(--clean-white);
+    padding: 30px;
+    border-radius: 8px;
+    border-top: 4px solid var(--navy-blue);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.safety-card h3 {
+    margin-bottom: 15px;
+    color: var(--navy-blue);
+}
+
+/* --- Fleet & Amenities Grid --- */
+.amenities-section {
+    background-color: var(--navy-blue);
+    color: var(--clean-white);
+}
+
+.amenities-section h2 {
+    color: var(--clean-white);
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.amenity-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.95rem;
+}
+
+/* --- Destinations Matrix Table --- */
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 20px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.destinations-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: var(--clean-white);
+}
+
+.destinations-table th {
+    background-color: var(--navy-blue);
+    color: var(--clean-white);
+    padding: 16px;
+    font-weight: 600;
+}
+
+.destinations-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-gray);
+    font-size: 0.95rem;
+}
+
+.destinations-table tr:nth-child(even) {
+    background-color: var(--light-gray);
+}
+
+/* --- Package Delivery/Logistics Section --- */
+.logistics-section {
+    background-color: var(--light-gray);
+    padding: 60px 0;
+}
+
+.logistics-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+}
+
+.logistics-block {
+    background-color: var(--clean-white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.logistics-block h3 {
+    color: var(--navy-blue);
+    margin-bottom: 15px;
+}
+
+/* --- Booking Form Section --- */
+.form-container {
+    background-color: var(--clean-white);
+    border: 1px solid var(--border-gray);
+    border-radius: 8px;
+    padding: 45px;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.form-group-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #475569;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-gray);
+    border-radius: 6px;
+    background-color: var(--light-gray);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--navy-blue);
+}
+
+/* --- Testimonials Card Layout --- */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background-color: var(--light-gray);
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 5px solid var(--bright-red);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-card .quote {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: var(--dark-charcoal);
+}
+
+.testimonial-card .author {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #475569;
+}
+
+/* --- Utilities & Footer --- */
+.hidden {
+    display: none;
+}
+
+.success-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    border-radius: 6px;
+    color: #166534;
+}
+
+.success-message h3 {
+    margin-bottom: 10px;
+}
+
+.main-footer {
+    background-color: var(--navy-blue);
+    color: #94A3B8;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    border-top: 4px solid var(--bright-red);
+}
+
+/* Responsive adjustment for small split forms */
+@media (max-width: 600px) {
+    .form-group-split, .logistics-content {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .main-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 0;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
